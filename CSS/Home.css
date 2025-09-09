@@ -1,0 +1,544 @@
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+  color: #333;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ==================== CABEÇALHO (DESKTOP) ==================== */
+.links-mobile {
+
+  display: none;
+}
+
+.cabecalho {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 20px;
+  height: 65px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  gap: 20px;
+  z-index: 1100;
+  background-color: #014999;
+}
+
+.logo-container {
+  display: block;
+  width: auto;
+}
+
+.logo-container img {
+  max-width: 250px;
+  height: auto;
+}
+
+.logo {
+  height: 50px;
+  width: 45px;
+  max-width: 100%;
+  display: block;
+}
+
+/* Menu desktop */
+.menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu a {
+  display: flex;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.1s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.menu-servico {
+  display: inline-block;
+  position: relative;
+}
+
+.menu-servico:hover > .servicos {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.menu-servico:hover > .servicos i.fa-caret-down {
+  transform: rotate(180deg);
+}
+
+.menu-servico:hover .submenu-servicos {
+  max-height: 120px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.servicos {
+  display: flex;
+  color: #fff;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.1s ease, transform 0.2s ease;
+}
+
+.servicos i.fa-caret-down {
+  margin-left: 4px;
+  transition: transform 0.1s ease;
+}
+
+.submenu-servicos {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 74, 153, 0.9);
+  opacity: 0;
+  gap: 15px;
+  padding: 12px 25px;
+  justify-content: center;
+  white-space: nowrap;
+  z-index: 1000;
+  border-radius: 6px;
+  min-width: 300px;
+}
+
+.submenu-servicos li {
+  list-style: none;
+}
+
+.submenu-servicos li a {
+  display: block;
+  color: #fff;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+}
+
+.submenu-servicos li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*============ Barra de Pesquisa ====================*/
+.barra-pesquisa {
+  display: flex;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  background-color: transparent;
+  align-items: center;
+  padding: 4px 10px;
+  width: 100%;
+  max-width: 220px;
+  flex-shrink: 0;
+}
+
+.barra-pesquisa input {
+  background: transparent;
+  position: relative;
+  color: #fff;
+  font-size: 0.95rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px 8px;
+  z-index: 2;
+}
+
+.barra-pesquisa button {
+  background: transparent;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  padding: 4px;
+  z-index: 2;
+}
+
+.placeholder-animado {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  font-size: 0.95rem;
+  user-select: none;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 3;
+}
+
+/* ==================== CONTEÚDO ==================== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 20px 0px;
+  width: 100%;
+  max-width: 100%; 
+  margin: 0 auto;    
+}
+
+/* CARD PRINCIPAL */
+.card-principal {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.principal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  width: 100%;
+  height: 600px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  transition: filter 0.4s ease;
+}
+
+.conteudo-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.70), transparent);
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+  border-radius: 0 0 16px 16px;
+  font-family: 'Georgia', serif;
+}
+
+.principal:hover .conteudo-card {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* LISTA DE CARDS SECUNDÁRIOS */
+
+.cards {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.cards .card {
+  width: 100%;
+  max-width: 1050px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 180px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.cards .card img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cards .card .conteudo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  color: black;
+  opacity: 1;
+  pointer-events: auto;
+  position: static;
+  background: none;
+}
+
+.cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ==================== RODAPÉ ==================== */
+
+footer {
+
+  background: #003366;
+  color: white;
+  width: 100vw;        
+  max-width: 100vw;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.conteudo-rodape {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-rodape {
+  width: 90px;
+  height: auto;
+}
+
+.rodape-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.rodape-links li a {
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.75rem;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+
+.rodape-links li a:hover {
+  opacity: 1;
+  text-decoration: solid;
+}
+
+@media (max-width: 768px) {
+
+  /* ==================== MAIN ==================== */
+  main {
+    padding: 230px 0 20px;
+    width: 100%;
+  }
+
+  /* ==================== HEADER ==================== */
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .logo-container img {
+    max-width: 50vw;
+  }
+
+  /* Esconder menu desktop */
+  .menu,
+  .menu-servico {
+    display: none;
+  }
+
+  /* Barra de pesquisa */
+  .barra-pesquisa {
+    margin-bottom: 10px; /* espaçamento entre barra e links */
+  }
+
+  /* ==================== LINKS MOBILE ==================== */
+  .links-mobile {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    margin-bottom: 15px;    
+  }
+
+  .links-mobile a {
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .links-mobile a:hover {
+      background-color: rgba(255,255,255,0.2);
+  }
+
+  /* ==================== CARD PRINCIPAL ==================== */
+  .card-principal {
+    width: 95%;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .principal {
+    width: 100%;
+    height: 350px;
+  }
+
+  .principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .card-principal .conteudo-card {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  /* ==================== CARDS SECUNDÁRIOS ==================== */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .cards .card {
+    position: relative;
+    width: 95%;
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .cards .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .cards .card .conteudo-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .cards .card .conteudo-card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .cards .card .conteudo-card p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  /* ==================== RODAPÉ ==================== */
+  footer {
+    flex-shrink: 0;
+    padding: 20px 0;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .conteudo-rodape {
+    padding: 0 10px;
+  }
+
+  /* ==================== MENU LATERAL MOBILE ==================== */
+  .menu-lateral-btn {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+

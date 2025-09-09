@@ -1,0 +1,464 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+  color: #333;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ==================== CABEÇALHO (DESKTOP) ==================== */
+.links-mobile {
+
+  display: none;
+}
+
+.cabecalho {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 20px;
+  height: 65px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  gap: 20px;
+  z-index: 1100;
+  background-color: #014999;
+}
+
+.logo-container {
+  display: block;
+  width: auto;
+}
+
+.logo-container img {
+  max-width: 250px;
+  height: auto;
+}
+
+.logo {
+  height: 50px;
+  width: 45px;
+  max-width: 100%;
+  display: block;
+}
+
+/* Menu desktop */
+.menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu a {
+  display: flex;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.1s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.menu-servico {
+  display: inline-block;
+  position: relative;
+}
+
+.menu-servico:hover > .servicos {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.menu-servico:hover > .servicos i.fa-caret-down {
+  transform: rotate(180deg);
+}
+
+.menu-servico:hover .submenu-servicos {
+  max-height: 120px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.servicos {
+  display: flex;
+  color: #fff;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background-color 0.1s ease, transform 0.2s ease;
+}
+
+.servicos i.fa-caret-down {
+  margin-left: 4px;
+  transition: transform 0.1s ease;
+}
+
+.submenu-servicos {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 74, 153, 0.9);
+  opacity: 0;
+  gap: 15px;
+  padding: 12px 25px;
+  justify-content: center;
+  white-space: nowrap;
+  z-index: 1000;
+  border-radius: 6px;
+  min-width: 300px;
+}
+
+.submenu-servicos li {
+  list-style: none;
+}
+
+.submenu-servicos li a {
+  display: block;
+  color: #fff;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+}
+
+.submenu-servicos li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/*============ Barra de Pesquisa ====================*/
+.barra-pesquisa {
+  display: flex;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  background-color: transparent;
+  align-items: center;
+  padding: 4px 10px;
+  width: 100%;
+  max-width: 220px;
+  flex-shrink: 0;
+}
+
+.barra-pesquisa input {
+  background: transparent;
+  position: relative;
+  color: #fff;
+  font-size: 0.95rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px 8px;
+  z-index: 2;
+}
+
+.barra-pesquisa button {
+  background: transparent;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  padding: 4px;
+  z-index: 2;
+}
+
+.placeholder-animado {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  font-size: 0.95rem;
+  user-select: none;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 3;
+}
+
+
+/* ==================== PÁGINA DE NOTÍCIA ==================== */
+main {
+  flex: 1;
+  margin-top: 80px; 
+  padding: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Título e meta */
+.titulo-noticia {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #014999;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.data-noticia {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Imagem principal */
+.imagem-noticia {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Corpo do texto */
+.texto-noticia {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.texto-noticia p {
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+/* Notícias relacionadas */
+.noticias-relacionadas {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f4f7fb;
+  border-left: 4px solid #014999;
+  border-radius: 6px;
+}
+
+.noticias-relacionadas h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #014999;
+}
+
+.noticias-relacionadas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.noticias-relacionadas li {
+  margin-bottom: 12px;
+}
+
+.noticias-relacionadas a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #003366;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.noticias-relacionadas a:hover {
+  color: #014999;
+  padding-left: 5px;
+}
+
+
+
+/* ==================== RODAPÉ ==================== */
+
+footer {
+
+  background: #003366;
+  color: white;
+  width: 100vw;        
+  max-width: 100vw;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.conteudo-rodape {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-rodape {
+  width: 90px;
+  height: auto;
+}
+
+.rodape-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.rodape-links li a {
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.75rem;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+
+.rodape-links li a:hover {
+  opacity: 1;
+  text-decoration: solid;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* ==================== MAIN ==================== */
+  main {
+    padding: 150px 0px 20px;
+    width: 100%;
+  }
+
+  /* ==================== CABEÇALHO ==================== */
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .logo-container img {
+    max-width: 50vw;
+  }
+
+
+  .menu,
+  .menu-servico {
+    display: none;
+  }
+
+  /* Barra de pesquisa */
+  .barra-pesquisa {
+    margin-bottom: 10px;
+  }
+
+  /* ==================== LINKS MOBILE ==================== */
+  .links-mobile {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    margin-bottom: 15px;    
+  }
+
+  .links-mobile a {
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .links-mobile a:hover {
+      background-color: rgba(255,255,255,0.2);
+  }
+
+
+  /* ==================== NOTÍCIA ==================== */
+  .titulo-noticia {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .data-noticia {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .imagem-noticia {
+    margin: 15px 0;
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+  }
+
+  .texto-noticia {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ==================== RELACIONADAS ==================== */
+  .noticias-relacionadas {
+    margin-top: 30px;
+    padding: 15px;
+    border-left: 3px solid #014999;
+  }
+
+  .noticias-relacionadas h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .noticias-relacionadas a {
+    font-size: 1rem;
+  }
+
+  /* ==================== RODAPÉ ==================== */
+  footer {
+    flex-shrink: 0;
+    padding: 20px 0;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .conteudo-rodape {
+    padding: 0 10px;
+  }
+}

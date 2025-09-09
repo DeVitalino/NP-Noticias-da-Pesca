@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias da Pesca</title>
+    <link rel="stylesheet" href="../CSS/paginas.css">
+    <link rel="icon" type="img" href="../IMAGE/NP64px.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    
+    <header class="cabecalho">
+
+        <div class="logo-container">
+            <a href="../HTML/Home.html" class="logo">
+                <img src="../IMAGE/LogoNp-Noticias-da-Pesca-minimalista.png" alt="Np Logo" class="logo">
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href=""><i class="fa-regular fa-newspaper"></i>Notícia</a>
+            <a href=""><i class="fa-regular fa-newspaper"></i>Notícia</a>
+            <a href="https://www.instagram.com/noticiasdapesca/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+
+            <div class="menu-servico">
+
+                <button class="servicos">
+                    <i class="fa-solid fa-link"></i> Serviços <i class="fa-solid fa-caret-down"></i>
+                </button>
+
+                <ul class="submenu-servicos">
+
+                        <li><a href="https://meu.inss.gov.br/#/login" target="_blank">INSS</a></li>
+                        <li><a href="https://pesqbrasil-pescadorprofissional.agro.gov.br/" target="_blank">PesqBrasil</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="barra-pesquisa">
+
+            <input type="text" id="pesquisa" autocomplete="off">
+            <span id="placeholder-animado" class="placeholder-animado">
+            </span>
+            <button onclick="pesquisar()">
+                <i class="fas fa-search"></i>
+            </button>
+
+        </div>
+
+        <!-- Links mobile INSS e PesqBrasil -->
+        <nav class="links-mobile">
+            <a href="https://meu.inss.gov.br/#/login" target="_blank">INSS</a>
+            <a href="https://pesqbrasil-pescadorprofissional.agro.gov.br/" target="_blank">PesqBrasil</a>
+        </nav>
+
+
+    </header>
+
+    <main>
+
+        <!-- Conteúdo da Notícia -->
+        <article class="noticia">
+            <h1 class="titulo-noticia">Bem-vindos ao NP – Notícias da Pesca</h1>
+            <p class="data-noticia">Publicado em 08 de setembro de 2025</p>
+
+            <img src="../IMAGE/Logo Np - Noticias da Pesca (Completo).png" alt="Imagem da notícia" class="imagem-noticia">
+
+            <div class="texto-noticia">
+                <p>É com grande satisfação que anunciamos o lançamento oficial do <strong>NP – Notícias da Pesca</strong>, um portal voltado exclusivamente para a cobertura de temas relacionados à <strong>aquicultura, pesca e maricultura</strong>, no Brasil e no mundo.</p>
+
+                <p>Nosso objetivo é <em>informar, conectar e atualizar</em> profissionais, pesquisadores, estudantes e todos aqueles que compartilham interesse pelo setor pesqueiro e aquícola.</p>
+
+                <p>Aqui, você encontrará notícias, análises e tendências de mercado que refletem a importância da pesca e aquicultura para a economia e a sustentabilidade.</p>
+            </div>
+        </article>
+
+        <!-- Seção de Notícias Relacionadas -->
+        <aside class="noticias-relacionadas">
+            <h2>Notícias Relacionadas</h2>
+            <ul>
+                <li><a href="noticia2.html">Em Breve...</a></li>
+                <li><a href="noticia3.html">Em Breve...</a></li>
+                <li><a href="noticia4.html">Em Breve...</a></li>
+            </ul>
+        </aside>
+
+        <!-- Rodapé já existente -->
+        <footer id="rodapé">
+            <div class="conteudo-rodape">
+                <img src="../IMAGE/Logo Np - Noticias da Pesca (Completo).png" alt="Logo " class="logo-rodape">
+                <ul class="rodape-links">
+                    <li><a href="../HTML/sobre.html"><i class="fa-solid fa-fish"></i> Sobre Nós</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </main>
+
+
+<script src="../JS/Menu.js"></script>
+<script src="../JS/Pesquisa.js"></script>
+<script src="../JS/BarraPesquisa.js"></script>
+
+</body>
+</html>
