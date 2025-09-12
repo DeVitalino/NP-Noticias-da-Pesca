@@ -297,6 +297,8 @@ main {
 
 
 /* ==================== RODAPÉ ==================== */
+footer { outline: 2px solid red; }
+
 
 footer {
   background: #003366;
